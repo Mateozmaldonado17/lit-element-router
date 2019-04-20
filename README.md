@@ -174,7 +174,7 @@ export class AnArbitaryLitElement extends routerLinkMixin(LitElement) {
 customElements.define('an-arbitary-lit-element', AnArbitaryLitElement);
 ```
 
-## Navigate using the router navigate method
+## Navigate using the router navigate method, without strange names, program again with the native tags and just extend the Anchor element to route-link.
 ```javascript
 import { routerLinkMixin } from '../lit-element-router'
 
