@@ -62,7 +62,11 @@ class MyApp extends routerMixin(LitElement) {
             <a is="route-link" href="/user/14">user/14</a>
             <a is="route-link" href="/user/16">user/16</a>
             <a is="route-link" href="/user/16/not/found">user/16/not/found</a>
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> routeLinkAsExtensibleElement
             <any-arbitary-lit-element current-route='${this.route}'>
                 <template route='home'>
                     <p>Home any-arbitary-lit-element</p>

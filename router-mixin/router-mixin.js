@@ -120,14 +120,24 @@ export let routerOutletMixin = (superclass) => class extends superclass {
     }
 
     routerOutlet() {
+<<<<<<< HEAD
         let bucket = document.getElementById(this.bucketName);
         Array.from(this.querySelectorAll(`template[route]`)).map((selected) => {
             bucket.innerHTML = selected.innerHTML;
+=======
+        Array.from(this.shadowRoot.querySelectorAll(`[route]`)).map((selected) => {
+            this.appendChild(selected);
+>>>>>>> routeLinkAsExtensibleElement
         });
 
         if (this.currentRoute) {
+<<<<<<< HEAD
             Array.from(this.querySelectorAll(`template[route~=${this.currentRoute}]`)).map((selected) => {
                 bucket.innerHTML = selected.innerHTML;
+=======
+            Array.from(this.querySelectorAll(`[route~=${this.currentRoute}]`)).map((selected) => {
+                this.shadowRoot.appendChild(selected)
+>>>>>>> routeLinkAsExtensibleElement
             });
         }
         if (super.routerOutlet) super.routerOutlet();

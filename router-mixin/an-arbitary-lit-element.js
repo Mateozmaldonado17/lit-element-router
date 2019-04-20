@@ -1,4 +1,3 @@
-import { LitElement, html } from 'lit-element'
 import { routerLinkMixin } from '../lit-element-router'
 
 export class RouterLink extends routerLinkMixin(HTMLAnchorElement) {
