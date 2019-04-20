@@ -60,13 +60,8 @@ Don't want to use mixins interface you cane use a simple version in this tutoria
 
 ## Make any arbitary components or elements to a router using router mixins method
 ```javascript
-<<<<<<< HEAD
-import { LitElement, html } from 'lit-element'
-import { router, RouteContainer, RouterLink } from 'lit-element-router'
-=======
 import { LitElement, html } from 'lit-element';
 import { routerMixin } from 'lit-element-router';
->>>>>>> routeLinkAsExtensibleElement
 
 class MyApp extends routerMixin(LitElement) {
 
@@ -97,26 +92,9 @@ class MyApp extends routerMixin(LitElement) {
         }];
     }
 
-<<<<<<< HEAD
-    render() {
-        return html`
-            <nav>
-                <router-link href='/'>Home</router-link>
-                <router-link href='/info'>Info</router-link>
-                <router-link href='/user/14'>user/14</router-link>
-            </nav>
-            <route-container route='${this.route}'>
-                <template route='home'>Home</template>
-                <template route='info'>Info</template>
-                <template route='user'>User ${this.params.id}</template>
-                <template route='not-found'>Not Found</template>
-            </route-container>
-        `
-=======
     onRoute(route, params, query, data) {
         this.route = route;
         this.params = params;
->>>>>>> routeLinkAsExtensibleElement
     }
 }
 
@@ -126,13 +104,8 @@ customElements.define('my-app', MyApp);
 
 ## Make any arbitary components or elements to a router outlet using router outlet mixins method
 ```javascript
-<<<<<<< HEAD
-import { LitElement, html } from 'lit-element'
-import { router, RouteContainer, RouterLink } from 'lit-element-router'
-=======
 import { LitElement, html } from 'lit-element';
 import { routerOutletMixin } from 'lit-element-router';
->>>>>>> routeLinkAsExtensibleElement
 
 export class AnyArbitaryLitElement extends routerOutletMixin(LitElement) {
     
@@ -170,27 +143,17 @@ class MyApp extends routerMixin(LitElement) {
 
     render() {
         return html`
-<<<<<<< HEAD
             <nav>
-                <router-link href='/'>Home</router-link>
-                <router-link href='/info'>Info</router-link>
-                <router-link href='/user/14'>user/14</router-link>
+                <a is="router-link" href='/'>Home</a>
+                <a is="router-link" href='/info'>Info</a>
+                <a is="router-link" href='/user/14'>user/14</a>
             </nav>
-            <route-container route='${this.route}'>
-                <template route='home'>Home</template>
-                <template route='info'>Info</template>
-                <template route='user'>User ${this.params.id}</template>
-                <template route='not-authorized'>Not Authorized</template>
-                <template route='not-found'>Not Found</template>
-            </route-container>
-        `
-=======
             <any-arbitary-lit-element current-route='${this.route}'>
-                <div route='home'>Home any-arbitary-lit-element</div>
-                <div route='info'>mY Info any-arbitary-lit-element</div>
-                <div route='user'>User ${this.params.id} any-arbitary-lit-element</div>
-                <div route='not-authorized'>Not Authorized any-arbitary-lit-element</div>
-                <div route='not-found'>Not Found any-arbitary-lit-element</div>
+                <template route='home'>Home any-arbitary-lit-element</template>
+                <template route='info'>mY Info any-arbitary-lit-element</template>
+                <template route='user'>User ${this.params.id} any-arbitary-lit-element</template>
+                <template route='not-authorized'>Not Authorized any-arbitary-lit-element</template>
+                <template route='not-found'>Not Found any-arbitary-lit-element</template>
             </any-arbitary-lit-element>
         `;
 }
@@ -211,9 +174,9 @@ export class AnArbitaryLitElement extends routerLinkMixin(LitElement) {
 customElements.define('an-arbitary-lit-element', AnArbitaryLitElement);
 ```
 
-## Navigate using the router navigate method, using extensible elements, thus making a natural development, without strange names, the same "a" as always.
+## Navigate using the router navigate method
 ```javascript
-import { routerLinkMixin } from 'lit-element-router'
+import { routerLinkMixin } from '../lit-element-router'
 
 export class RouterLink extends routerLinkMixin(HTMLAnchorElement) {
     constructor() {
@@ -225,7 +188,6 @@ export class RouterLink extends routerLinkMixin(HTMLAnchorElement) {
     linkClick(event) {
         event.preventDefault();
         this.navigate(this.href);
->>>>>>> routeLinkAsExtensibleElement
     }
 }
 
